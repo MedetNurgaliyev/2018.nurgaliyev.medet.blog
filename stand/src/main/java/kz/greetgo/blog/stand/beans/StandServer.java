@@ -35,5 +35,7 @@ public class StandServer implements HasAfterInject {
         webAppContextRegistration.get().stream()
                 .sorted(Comparator.comparing(WebAppContextRegistration::priority))
                 .forEachOrdered(r -> r.registerTo(webAppServlet));
+
+        server.setHandler(webAppServlet);
     }
 }

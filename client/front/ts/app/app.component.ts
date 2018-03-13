@@ -26,8 +26,8 @@ export class AppComponent implements OnInit {
     ngOnInit(): void {
         this.httpService.get("/getMainText").toPromise().then(
             result =>{
-
-                this.text=result.json().text;
+                console.log(result);
+                this.text=result.json();
             },
             error =>{
                 this.text="Login form";
